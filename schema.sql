@@ -7,5 +7,10 @@ CREATE TABLE animals (
     escape_attempts INT,
     neutered BOOLEAN,
     weight_kg DECIMAL,
+    species varchar(100) NOT NULL ,
     PRIMARY KEY (id)
 );
+
+/*CAN USE:
+ ALTER TABLE animals
+ADD species varchar(100); */
