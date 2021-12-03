@@ -76,3 +76,44 @@ SET owners_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester')  WHE
 COMMIT;
 END;
 
+
+/* insert into vets table vets data */
+INSERT INTO vets (name,age,date_of_graduation)
+VALUES  ('William Tatcher',45,'2000-04-23'),
+        ('Maisy Smith',26,'2019-01-17'),
+        ('Stephanie Mendez',64,'1981-05-04'),
+        ('Jack Harkness',38,'2008-06-08');
+
+/* insert data into specialization convinient with the other tables */
+
+INSERT INTO specializations (vets_id,species_id)
+VALUES  (1,1), /* Can use SELECT vets_id from vets where name='William tatcher'* and same for specie*/
+        (2,2),
+        (2,1),
+        (3,2);
+
+
+/* insert visit table data*/
+INSERT INTO visits (vets_id,animals_id,visit_date)
+VALUES 
+    (1,(SELECT id from animals where name = 'Agumon'),'2020-05-24'),
+    (3,(SELECT id from animals where name = 'Agumon'),'2020-07-22'),
+    (4,(SELECT id from animals where name = 'Gabumon'),'2021-02-02'),
+    (2,(SELECT id from animals where name = 'Pikachu'),'2020-01-05'),
+    (2,(SELECT id from animals where name = 'Pikachu'),'2020-03-08'),
+    (2,(SELECT id from animals where name = 'Pikachu'),'2020-05-14'),
+    (3,(SELECT id from animals where name = 'Devimon'),'2021-05-04'),
+    (4,(SELECT id from animals where name = 'Charmander'),'2021-02-24'),
+    (2,(SELECT id from animals where name = 'Plantmon'),'2019-12-21'),
+    (1,(SELECT id from animals where name = 'Plantmon'),'2020-08-10'),
+    (2,(SELECT id from animals where name = 'Plantmon'),'2021-04-07'),
+    (3,(SELECT id from animals where name = 'Squirtle'),'2019-09-29'),
+    (4,(SELECT id from animals where name = 'Angemon'),'2020-10-03'),
+    (4,(SELECT id from animals where name = 'Angemon'),'2020-11-04'),
+    (2,(SELECT id from animals where name = 'Boarmon'),'2019-01-24'),
+    (2,(SELECT id from animals where name = 'Boarmon'),'2019-05-15'),
+    (2,(SELECT id from animals where name = 'Boarmon'),'2020-02-27'),
+    (2,(SELECT id from animals where name = 'Boarmon'),'2020-08-03'),
+    (3,(SELECT id from animals where name = 'Blossom'),'2020-05-24'),
+    (1,(SELECT id from animals where name = 'Blossom'),'2021-01-11');
+
