@@ -2,6 +2,20 @@
 
 This is a list of sql commands to add,insert and filter fictional animal elements inside a DB by the name 'vet_clinic'.
 
+# INDEXING
+
+**BEFORE**
+
+![animals_id](./Before/before_performance_animalsid.png)
+![vets_id](./Before/before_performance_vetsid.png)
+![ownersmail](./Before/before_performance_ownermail.png)
+
+**AFTER**
+
+![animals_id](./After/after_performance_animalsid.png)
+![vets_id](./After/after_performance_vetsid.png)
+![ownersmail](./After/after_performance_ownersmail.png)
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
