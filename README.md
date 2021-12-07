@@ -4,16 +4,34 @@ This is a list of sql commands to add,insert and filter fictional animal element
 
 # INDEXING
 
+**<span style="color:red;">animals_id</span>**
+
 **BEFORE**
 
 ![animals_id](./Before/before_performance_animalsid.png)
-![vets_id](./Before/before_performance_vetsid.png)
-![ownersmail](./Before/before_performance_ownermail.png)
 
 **AFTER**
 
 ![animals_id](./After/after_performance_animalsid.png)
+
+**<span style="color:red;"><storng>vets_id</strong></span>**
+
+**BEFORE**
+
+![vets_id](./Before/before_performance_vetsid.png)
+
+**AFTER**
+
 ![vets_id](./After/after_performance_vetsid.png)
+
+**<span style="color:red;"><storng>owner-mail search</strong></span>**
+
+**BEFORE**
+
+![ownersmail](./Before/before_performance_ownermail.png)
+
+**AFTER**
+
 ![ownersmail](./After/after_performance_ownersmail.png)
 
 ## Getting Started
