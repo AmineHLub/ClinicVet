@@ -61,3 +61,6 @@ CREATE TABLE visits (
 
 ALTER TABLE visits 
 ADD visit_date DATE;
+
+ALTER TABLE owners 
+ADD email varchar(120);
