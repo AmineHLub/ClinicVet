@@ -117,3 +117,25 @@ VALUES
     (3,(SELECT id from animals where name = 'Blossom'),'2020-05-24'),
     (1,(SELECT id from animals where name = 'Blossom'),'2021-01-11');
 
+ /* in order to get a huge data base we used the given script
+ multiple(around 5times) times do not run these commands unless you know
+ what are they for*/
+
+INSERT INTO visits (animals_id, vets_id, visit_date)
+ SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets)
+  vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' ||
+ generate_series(1,2500000) || '@mail.com';
+
+/* BEFORE CHANGES (indices) */
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4; /* 1787 ms */
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2; /* 600ms */
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com'; /* 3000+ms */
+
+/* AFTER CHANGES (indices) */
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4; /* 786ms */
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2; 
+/* 843ms */
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com'; /* 0.076 ms */
