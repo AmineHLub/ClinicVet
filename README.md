@@ -2,6 +2,10 @@
 
 This is a list of sql commands to add,insert and filter fictional animal elements inside a DB by the name 'vet_clinic'.
 
+# DIAGRAM
+
+![diagram](./Blank%20diagram.png)
+
 # INDEXING
 
 **<span style="color:red;">animals_id</span>**
