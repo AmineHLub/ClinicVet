@@ -2,7 +2,11 @@
 
 This is a list of sql commands to add,insert and filter fictional animal elements inside a DB by the name 'vet_clinic'.
 
-# DIAGRAM
+# Main DIAGRAM
+
+![diagram](./Blank%20diagram1.png)
+
+# 2nd Activity DIAGRAM
 
 ![diagram](./Blank%20diagram.png)
 
